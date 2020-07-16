@@ -1,0 +1,651 @@
+U-Boot 2016.03-21152-ga57b13b942-dirty (Aug 14 2018 - 11:25:39 +0800)
+
+CPU:   Freescale i.MX6ULL rev1.1 528 MHz (running at 396 MHz)
+CPU:   Industrial temperature grade (-40C to 105C) at 41C
+Reset cause: POR
+Board: MX6ULL 14x14 EVK
+I2C:   ready
+DRAM:  256 MiB
+MMC:   FSL_SDHC: 0, FSL_SDHC: 1
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+switch to partitions #0, OK
+mmc1(part 0) is current device
+Net:   FEC0
+Error: FEC0 address not set.
+
+Normal Boot
+Hit any key to stop autoboot:  3  2  1  0 
+switch to partitions #0, OK
+mmc1(part 0) is current device
+switch to partitions #0, OK
+mmc1(part 0) is current device
+reading boot.scr
+** Unable to read file boot.scr **
+reading zImage
+5902096 bytes read in 145 ms (38.8 MiB/s)
+Booting from mmc ...
+reading imx6ul-14x14-evk.dtb
+38112 bytes read in 19 ms (1.9 MiB/s)
+Kernel image @ 0x80800000 [ 0x000000 - 0x5a0f10 ]
+## Flattened Device Tree blob at 83000000
+   Booting using the fdt blob at 0x83000000
+   Using Device Tree in place at 83000000, end 8300c4df
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.14.38-6UL_ga+ge4944a5 (root@dinsafer) (gcc version 4.6.2 20110630 (prerelease) (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) ) #35 SMP PREEMPT Mon Aug 13 18:43:38 CST 2018
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Freescale i.MX6 UltraLite 14x14 EVK Board
+[    0.000000] cma: CMA: reserved 32 MiB at 8e000000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] PERCPU: Embedded 8 pages/cpu @8ddd0000 s8320 r8192 d16256 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 65024
+[    0.000000] Kernel command line: console=ttymxc0,115200 root=/dev/mmcblk1p2 rootwait rw
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 215836K/262144K available (7254K kernel code, 427K rwdata, 2544K rodata, 388K init, 431K bss, 46308K reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0x90800000 - 0xff000000   (1768 MB)
+[    0.000000]     lowmem  : 0x80000000 - 0x90000000   ( 256 MB)
+[    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[    0.000000]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+[    0.000000]       .text : 0x80008000 - 0x80999d7c   (9800 kB)
+[    0.000000]       .init : 0x8099a000 - 0x809fb080   ( 389 kB)
+[    0.000000]       .data : 0x809fc000 - 0x80a66e80   ( 428 kB)
+[    0.000000]        .bss : 0x80a66e8c - 0x80ad2de4   ( 432 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] Switching to timer-based delay loop
+[    0.000018] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956969942ns
+[    0.002731] clocksource_of_init: no matching clocksources found
+[    0.003116] Console: colour dummy device 80x30
+[    0.003169] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    0.003204] pid_max: default: 32768 minimum: 301
+[    0.003629] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.003655] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.005321] CPU: Testing write buffer coherency: ok
+[    0.005843] /cpus/cpu@0 missing clock-frequency property
+[    0.005884] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.005943] Setting up static identity map for 0x806e3db8 - 0x806e3e10
+[    0.040767] Brought up 1 CPUs
+[    0.040805] SMP: Total of 1 processors activated (48.00 BogoMIPS).
+[    0.040823] CPU: All CPU(s) started in SVC mode.
+[    0.042159] devtmpfs: initialized
+[    0.053219] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.054044] pinctrl core: initialized pinctrl subsystem
+[    0.054978] regulator-dummy: no parameters
+[    0.058120] NET: Registered protocol family 16
+[    0.076385] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.078085] cpuidle: using governor ladder
+[    0.078113] cpuidle: using governor menu
+[    0.078412] Use WDOG1 as reset source
+[    0.096916] syscon 20c8000.anatop: regmap [mem 0x020c8000-0x020c8fff] registered
+[    0.097665] vdd3p0: 2625 <--> 3400 mV at 3000 mV 
+[    0.098602] cpu: 725 <--> 1450 mV at 1150 mV 
+[    0.099527] vddsoc: 725 <--> 1450 mV at 1175 mV 
+[    0.104640] syscon 20e4000.iomuxc-gpr: regmap [mem 0x020e4000-0x020e7fff] registered
+[    0.110878] syscon 21ac000.romcp: regmap [mem 0x021ac000-0x021affff] registered
+[    0.112381] syscon 21bc000.ocotp-ctrl: regmap [mem 0x021bc000-0x021bffff] registered
+[    0.119920] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.119952] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.125841] imx6ul-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+[    0.156706] bio: create slab <bio-0> at 0
+[    0.164054] mxs-dma 1804000.dma-apbh: initialized
+[    0.165012] can-3v3: 3300 mV 
+[    0.165606] VSD_3V3: 3300 mV 
+[    0.166355] usb_otg1_vbus: 5000 mV 
+[    0.167704] gpio_dvfs: 1300 <--> 1400 mV at 1400 mV 
+[    0.168983] i2c-core: driver [max17135] using legacy suspend method
+[    0.169007] i2c-core: driver [max17135] using legacy resume method
+[    0.170332] SCSI subsystem initialized
+[    0.171680] usbcore: registered new interface driver usbfs
+[    0.171860] usbcore: registered new interface driver hub
+[    0.172192] usbcore: registered new device driver usb
+[    0.173710] Linux video capture interface: v2.00
+[    0.173885] pps_core: LinuxPPS API ver. 1 registered
+[    0.173907] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.173973] PTP clock support registered
+[    0.176594] MIPI CSI2 driver module loaded
+[    0.177149] Advanced Linux Sound Architecture Driver Initialized.
+[    0.179186] Bluetooth: Core ver 2.18
+[    0.179330] NET: Registered protocol family 31
+[    0.179352] Bluetooth: HCI device and connection manager initialized
+[    0.179393] Bluetooth: HCI socket layer initialized
+[    0.179428] Bluetooth: L2CAP socket layer initialized
+[    0.179515] Bluetooth: SCO socket layer initialized
+[    0.180512] cfg80211: Calling CRDA to update world regulatory domain
+[    0.181497] Switched to clocksource mxc_timer1
+[    0.207803] NET: Registered protocol family 2
+[    0.209798] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.209879] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.209971] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.210085] TCP: reno registered
+[    0.210119] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.210178] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.210745] NET: Registered protocol family 1
+[    0.211600] RPC: Registered named UNIX socket transport module.
+[    0.211633] RPC: Registered udp transport module.
+[    0.211651] RPC: Registered tcp transport module.
+[    0.211669] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.214404] imx rpmsg driver is registered.
+[    0.216448] Bus freq driver module loaded
+[    0.218460] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.237562] VFS: Disk quotas dquot_6.5.2
+[    0.238320] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.245042] NFS: Registering the id_resolver key type
+[    0.245167] Key type id_resolver registered
+[    0.245191] Key type id_legacy registered
+[    0.245281] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.247143] fuse init (API version 7.22)
+[    0.248355] msgmni has been set to 485
+[    0.257143] io scheduler noop registered
+[    0.257176] io scheduler deadline registered
+[    0.257677] io scheduler cfq registered (default)
+[    0.258721] imx-weim 21b8000.weim: Driver registered.
+[    0.261291] MIPI DSI driver module loaded
+[    0.271971] imx-sdma 20ec000.sdma: no event needs to be remapped
+[    0.272176] imx-sdma 20ec000.sdma: loaded firmware 3.1
+[    0.280897] imx-sdma 20ec000.sdma: initialized
+[    0.282933] Serial: IMX driver
+[    0.283599] 2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 58, base_baud = 5000000) is a IMX
+[    0.976393] console [ttymxc0] enabled
+[    0.981847] 21e8000.serial: ttymxc1 at MMIO 0x21e8000 (irq = 59, base_baud = 5000000) is a IMX
+[    0.991692] 21ec000.serial: ttymxc2 at MMIO 0x21ec000 (irq = 60, base_baud = 5000000) is a IMX
+[    1.001446] 21f0000.serial: ttymxc3 at MMIO 0x21f0000 (irq = 61, base_baud = 5000000) is a IMX
+[    1.011310] 21f4000.serial: ttymxc4 at MMIO 0x21f4000 (irq = 62, base_baud = 5000000) is a IMX
+[    1.020913] serial: Freescale lpuart driver
+[    1.028929] imx sema4 driver is registered.
+[    1.033412] [drm] Initialized drm 1.1.0 20060810
+[    1.039158] [drm] Initialized vivante 1.0.0 20120216 on minor 0
+[    1.067728] brd: module loaded
+[    1.083191] loop: module loaded
+[    1.092780] fsl-quadspi 21e0000.qspi: unrecognized JEDEC id ffffff
+[    1.099026] fsl-quadspi 21e0000.qspi: Freescale QuadSPI probe failed
+[    1.111466] CAN device driver interface
+[    1.118457] flexcan 2090000.can: device registered (reg_base=90930000, irq=142)
+[    1.128361] 2188000.ethernet supply phy not found, using dummy regulator
+[    1.136454] pps pps0: new PPS source ptp0
+[    1.140992] fec 2188000.ethernet (unregistered net_device): Invalid MAC address: XX:XX:XX:XX:XX:XX
+[    1.150141] fec 2188000.ethernet (unregistered net_device): Using random MAC address: XX:XX:XX:XX:XX:XX
+[    1.160262] libphy: fec_enet_mii_bus: probed
+[    1.167683] fec 2188000.ethernet eth0: registered PHC device 0
+[    1.175254] PPP generic driver version 2.4.2
+[    1.180089] PPP BSD Compression module registered
+[    1.184988] PPP Deflate Compression module registered
+[    1.190256] usbcore: registered new interface driver cdc_ether
+[    1.196376] usbcore: registered new interface driver cdc_eem
+[    1.202427] usbcore: registered new interface driver cdc_ncm
+[    1.208703] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.215356] ehci-mxc: Freescale On-Chip EHCI Host driver
+[    1.221128] usbcore: registered new interface driver cdc_acm
+[    1.226956] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    1.235243] usbcore: registered new interface driver cdc_wdm
+[    1.241134] usbcore: registered new interface driver usb-storage
+[    1.247581] usbcore: registered new interface driver usbserial
+[    1.253620] usbcore: registered new interface driver usbserial_generic
+[    1.260310] usbserial: USB Serial support registered for generic
+[    1.266514] usbcore: registered new interface driver ftdi_sio
+[    1.272447] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    1.279902] usbcore: registered new interface driver option
+[    1.285655] usbserial: USB Serial support registered for GSM modem (1-port)
+[    1.292823] usbcore: registered new interface driver usb_ehset_test
+[    1.301296] 2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
+[    1.317551] 2184200.usb supply vbus not found, using dummy regulator
+[    1.327904] ci_hdrc ci_hdrc.1: EHCI Host Controller
+[    1.333498] ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
+[    1.351615] ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
+[    1.359253] hub 1-0:1.0: USB hub found
+[    1.363239] hub 1-0:1.0: 1 port detected
+[    1.369547] mousedev: PS/2 mouse device common for all mice
+[    1.377360] input: 20cc000.snvs-pwrkey as /devices/soc0/soc.0/2000000.aips-bus/20cc000.snvs-pwrkey/input/input0
+[    1.388315] snvs_pwrkey 20cc000.snvs-pwrkey: i.MX snvs powerkey probed
+[    1.395469] i2c-core: driver [isl29023] using legacy suspend method
+[    1.401833] i2c-core: driver [isl29023] using legacy resume method
+[    1.410059] snvs_rtc 20cc034.snvs-rtc-lp: rtc core: registered 20cc034.snvs-rtc-lp as rtc0
+[    1.418773] i2c /dev entries driver
+[    1.422648] IR NEC protocol handler initialized
+[    1.427215] IR RC5(x) protocol handler initialized
+[    1.432080] IR RC6 protocol handler initialized
+[    1.436644] IR JVC protocol handler initialized
+[    1.441198] IR Sony protocol handler initialized
+[    1.445877] IR RC5 (streamzap) protocol handler initialized
+[    1.451513] IR SANYO protocol handler initialized
+[    1.456247] IR MCE Keyboard/mouse protocol handler initialized
+[    1.463580] i2c-core: driver [mag3110] using legacy suspend method
+[    1.469806] i2c-core: driver [mag3110] using legacy resume method
+[    1.477091] imx2-wdt 20bc000.wdog: IMX2+ Watchdog Timer enabled. timeout=60s (nowayout=0)
+[    1.485720] Bluetooth: HCI UART driver ver 2.2
+[    1.490207] Bluetooth: HCI H4 protocol initialized
+[    1.495080] Bluetooth: HCI BCSP protocol initialized
+[    1.500079] Bluetooth: HCIATH3K protocol initialized
+[    1.505329] usbcore: registered new interface driver bcm203x
+[    1.511207] usbcore: registered new interface driver btusb
+[    1.516971] usbcore: registered new interface driver ath3k
+[    1.523144] sdhci: Secure Digital Host Controller Interface driver
+[    1.529362] sdhci: Copyright(c) Pierre Ossman
+[    1.533804] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.543084] mmc0: no vqmmc regulator found
+[    1.591581] mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
+[    1.602315] mmc1: no vqmmc regulator found
+[    1.606472] mmc1: no vmmc regulator found
+[    1.651569] mmc1: SDHCI controller on 2194000.usdhc [2194000.usdhc] using ADMA
+[    1.662132] usbcore: registered new interface driver usbhid
+[    1.667756] usbhid: USB HID core driver
+[    1.678993] fsl-asrc 2034000.asrc: driver registered
+[    1.694033] imx-wm8960 sound.14: failed to find codec platform device
+[    1.700560] imx-wm8960: probe of sound.14 failed with error -22
+[    1.709953] NET: Registered protocol family 26
+[    1.714958] TCP: cubic registered
+[    1.731435] NET: Registered protocol family 10
+[    1.749250] sit: IPv6 over IPv4 tunneling driver
+[    1.767501] NET: Registered protocol family 17
+[    1.772181] can: controller area network core (rev 20120528 abi 9)
+[    1.778576] NET: Registered protocol family 29
+[    1.783156] can: raw protocol (rev 20120528)
+[    1.787465] can: broadcast manager protocol (rev 20120528 t)
+[    1.795323] can: netlink gateway (rev 20130117) max_hops=1
+[    1.801650] Bluetooth: RFCOMM TTY layer initialized
+[    1.806617] Bluetooth: RFCOMM socket layer initialized
+[    1.812072] Bluetooth: RFCOMM ver 1.11
+[    1.817996] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    1.827529] Bluetooth: BNEP filters: protocol multicast
+[    1.835978] Bluetooth: BNEP socket layer initialized
+[    1.843122] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    1.851176] Bluetooth: HIDP socket layer initialized
+[    1.858413] 8021q: 802.1Q VLAN Support v1.8
+[    1.864905] Key type dns_resolver registered
+[    1.877094] cpu cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)
+[    1.905517] gpio_dvfs: disabling
+[    1.908806] usb_otg1_vbus: disabling
+[    1.914646] can-3v3: disabling
+[    1.917747] regulator-dummy: disabling
+[    1.922571] imx mcc test is registered.
+[    1.927852] snvs_rtc 20cc034.snvs-rtc-lp: setting system clock to 1970-01-01 00:00:00 UTC (0)
+[    1.993309] ALSA device list:
+[    1.996323]   No soundcards found.
+[    2.000525] Waiting for root device /dev/mmcblk1p2...
+[    2.097246] mmc1: new high speed DDR MMC card at address 0001
+[    2.104172] mmcblk1: mmc1:0001 DG4008 7.28 GiB 
+[    2.109223] mmcblk1boot0: mmc1:0001 DG4008 partition 1 4.00 MiB
+[    2.115773] mmcblk1boot1: mmc1:0001 DG4008 partition 2 4.00 MiB
+[    2.122256] mmcblk1rpmb: mmc1:0001 DG4008 partition 3 4.00 MiB
+[    2.130902]  mmcblk1: p1 p2
+[    2.139352]  mmcblk1boot1: unknown partition table
+[    2.147467]  mmcblk1boot0: unknown partition table
+[    2.612544] kjournald starting.  Commit interval 5 seconds
+[    2.618244] EXT3-fs (mmcblk1p2): using internal journal
+[    2.625199] EXT3-fs (mmcblk1p2): recovery complete
+[    2.630032] EXT3-fs (mmcblk1p2): mounted filesystem with ordered data mode
+[    2.637074] VFS: Mounted root (ext3 filesystem) on device 179:2.
+[    2.645937] devtmpfs: mounted
+[    2.649721] Freeing unused kernel memory: 388K (8099a000 - 809fb000)
+INIT: version 2.88 booting
+[info] Using makefile-style concurrent boot in runlevel S.
+[....] Starting the hotplug events dispatcher: udevd[    3.942901] udevd[209]: starting version 175
+[ ok .
+[....] Synthesizing the initial hotplug events...[ ok done.
+[....] Waiting for /dev to be fully populated...[    5.866783] random: nonblocking pool is initialized
+[ ok done.
+[....] Activating swap...[ ok done.
+[....] Cleaning up temporary files... /tmp[ ok .
+[....] Activating lvm and md swap...[ ok done.
+[....] Checking file systems...fsck from util-linux 2.20.1
+[ ok done.
+[....] Mounting local filesystems...[ ok done.
+[....] Activating swapfile swap...[ ok done.
+[....] Cleaning up temporary files...[ ok .
+[....] Setting kernel variables ...[ ok done.
+[....] Configuring network interfaces...wpa_supplicant: /sbin/wpa_supplicant daemon failed to start
+run-parts: /etc/network/if-pre-up.d/wpasupplicant exited with return code 1
+[ ok done.
+[....] Cleaning up temporary files...[ ok .
+[....] Setting up ALSA...warning: 'alsactl restore' failed with error message 'alsactl: load_state:1686: No soundcards found...'...[ ok done.
+INIT: Entering runlevel: 2
+[info] Using makefile-style concurrent boot in runlevel 2.
+[....] Starting enhanced syslogd: rsyslogd[ ok .
+[....] Starting periodic command scheduler: cron[ ok .
+dhcpcd[1665]: version 5.5.6 starting
+dhcpcd[1665]: no valid interfaces found
+dhcpcd[1665]: no interfaces have a carrier
+dhcpcd[1665]: forked to background, child pid 1756
+[....] Starting system message bus: dbus[ ok .
+[....] Starting bluetooth: bluetoothd rfcomm[ ok .
+[....] Starting OpenBSD Secure Shell server: sshd[ ok .
+Starting very small Busybox based DHCP server: Starting /usr/sbin/udhcpd...
+udhcpd.
+[   19.031959] fec 2188000.ethernet eth1: Freescale FEC PHY driver [Micrel KSZ8081 or KSZ8091] (mii_bus:phy_addr=2188000.ethernet:02, irq=-1)
+[   19.052830] RTL871X: module init start
+[   19.056625] RTL871X: rtl8723bu v4.3.6_11841.20140711_BTCOEX20140507-4E40
+[   19.064039] RTL871X: build time: Dec 16 2017 10:10:17
+[   19.069119] RTL871X: rtl8723bu BT-Coex version = BTCOEX20140507-4E40
+[   19.091699] IPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready
+[   19.097865] usbcore: registered new interface driver rtl8723bu
+[   19.107727] RTL871X: module init ret=0
+[   21.441843] usb 1-1: new high-speed USB device number 2 using ci_hdrc
+[   21.613111] RTL871X: 
+[   21.613111] usb_endpoint_descriptor(0):
+[   21.619253] RTL871X: bLength=7
+[   21.623087] RTL871X: bDescriptorType=5
+[   21.626870] RTL871X: bEndpointAddress=84
+[   21.630808] RTL871X: wMaxPacketSize=512
+[   21.635724] RTL871X: bInterval=0
+[   21.639014] RTL871X: RT_usb_endpoint_is_bulk_in = 4
+[   21.644331] RTL871X: 
+[   21.644331] usb_endpoint_descriptor(1):
+[   21.650451] RTL871X: bLength=7
+[   21.653932] RTL871X: bDescriptorType=5
+[   21.658073] RTL871X: bEndpointAddress=5
+[   21.662375] RTL871X: wMaxPacketSize=512
+[   21.666232] RTL871X: bInterval=0
+[   21.669471] RTL871X: RT_usb_endpoint_is_bulk_out = 5
+[   21.674908] RTL871X: 
+[   21.674908] usb_endpoint_descriptor(2):
+[   21.681030] RTL871X: bLength=7
+[   21.684518] RTL871X: bDescriptorType=5
+[   21.688286] RTL871X: bEndpointAddress=6
+[   21.692465] RTL871X: wMaxPacketSize=512
+[   21.696322] RTL871X: bInterval=0
+[   21.699559] RTL871X: RT_usb_endpoint_is_bulk_out = 6
+[   21.704910] RTL871X: 
+[   21.704910] usb_endpoint_descriptor(3):
+[   21.711028] RTL871X: bLength=7
+[   21.714462] RTL871X: bDescriptorType=5
+[   21.718230] RTL871X: bEndpointAddress=87
+[   21.722474] RTL871X: wMaxPacketSize=64
+[   21.726240] RTL871X: bInterval=3
+[   21.729482] RTL871X: RT_usb_endpoint_is_int_in = 7, Interval = 3
+[   21.735861] RTL871X: 
+[   21.735861] usb_endpoint_descriptor(4):
+[   21.742279] RTL871X: bLength=7
+[   21.745353] RTL871X: bDescriptorType=5
+[   21.749111] RTL871X: bEndpointAddress=8
+[   21.753315] RTL871X: wMaxPacketSize=512
+[   21.757169] RTL871X: bInterval=0
+[   21.760407] RTL871X: RT_usb_endpoint_is_bulk_out = 8
+[   21.765751] RTL871X: 
+[   21.765751] usb_endpoint_descriptor(5):
+[   21.772177] RTL871X: bLength=7
+[   21.775250] RTL871X: bDescriptorType=5
+[   21.779007] RTL871X: bEndpointAddress=9
+[   21.783209] RTL871X: wMaxPacketSize=512
+[   21.787062] RTL871X: bInterval=0
+[   21.790300] RTL871X: RT_usb_endpoint_is_bulk_out = 9
+[   21.795639] RTL871X: nr_endpoint=6, in_num=2, out_num=4
+[   21.795639] 
+[   21.802663] RTL871X: USB_SPEED_HIGH
+[   21.806239] RTL871X: CHIP TYPE: RTL8723BU
+[   21.810334] RTL871X: register rtw_netdev_ops to netdev_ops
+[   21.817095] RTL871X: Chip Version Info: CHIP_8723B_Normal_Chip_TSMC_E_CUT_1T1R_RomVer(0)
+[   21.825595] RTL871X: RF_Type is 3!!
+[   21.829115] RTL871X: _ConfigChipOutEP_8723 OutEpQueueSel(0x07), OutEpNumber(4) 
+[   21.837120] RTL871X: EEPROM type is E-FUSE
+[   21.841240] RTL871X: ====> _ReadAdapterInfo8723BU
+[   21.846955] RTL871X: Boot from EFUSE, Autoload OK !
+[   21.852710] RTL871X: hal_EfuseSwitchToBank: Efuse switch bank to 0
+[   22.008461] RTL871X: hal_ReadEFuse_WiFi: data end at address=0x82
+[   22.015194] RTL871X: Efuse Realmap:
+[   22.018718] 
+REMOVED
+[   22.217990] RTL871X: EEPROM VID = 0x bda
+[   22.222302] RTL871X: EEPROM PID = 0xb720
+[   22.226604] RTL871X: Hal_EfuseParseBTCoexistInfo_8723B: Enable BT-coex, ant_num=1
+[   22.234541] RTL871X: InitAdapterVariablesByPROM_8723BU(): REPLACEMENT = 0
+[   22.241352] RTL871X: <==== _ReadAdapterInfo8723BU in 400 ms
+[   22.247532] RTL871X: init_channel_set ChannelPlan ID 20 Chan num:13  
+[   22.255566] RTL871X: Init_ODM_ComInfo_8723b(): fab_ver=0 cut_ver=0
+[   22.262298] RTL871X: can't get autopm: 
+[   22.266174] RTL871X: rtw_macaddr_cfg MAC Address  = XX:XX:XX:XX:XX:XX
+[   22.273045] RTL871X: bDriverStopped:1, bSurpriseRemoved:0, bup:0, hw_init_completed:0
+[   22.280940] RTL871X: rtw_ndev_init(wlan0)
+[   22.290868] RTL871X: +871x_drv - drv_open, bup=0
+[   22.296021] RTL871X: _rtw_drv_register_netdev, MAC Address (if1) = XX:XX:XX:XX:XX:XX
+[   22.304699] RTL871X:  power-on :REG_SYS_CLKR 0x09=0x30. REG_CR 0x100=0xea.
+[   22.341644] RTL871X:  MAC has not been powered on yet.
+[   22.369335] RTL871X: rtl8723b_FirmwareDownload(wlan0) tmp_ps=0 
+[   22.384186] RTL871X: rtl8723b_FirmwareDownload fw: FW_NIC, size: 27324
+[   22.390758] RTL871X: rtl8723b_FirmwareDownload: fw_ver=1d fw_subver=0000 sig=0x5301, Month=06, Date=05, Hour=10, Minute=58
+[   22.405879] RTL871X: rtl8723b_FirmwareDownload(): Shift for fw header!
+[   22.452955] RTL871X: polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:0x00060305
+[   22.473190] RTL871X: _8051Reset8723: Finish
+[   22.501833] RTL871X: _FWFreeToGo: Polling FW ready OK! (157, 30ms), REG_MCUFWDL:0x000602c6
+[   22.510153] RTL871X: FWDL success. write_fw:1, 90ms
+[   22.537552] RTL871X:  <=== rtl8723b_FirmwareDownload()
+[   22.562485] RTL871X: fw download ok!
+[   23.253328] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   23.266949] RTL871X: RTW_ADAPTIVITY_EN_AUTO, chplan:0x20, Regulation:0,0
+[   23.274185] RTL871X: RTW_ADAPTIVITY_MODE_NORMAL
+[   23.281207] RTL871X: pDM_Odm TxPowerTrackControl = 1
+[   23.871560] RTL871X: rtl8723bu_hal_init in 1570ms
+[   23.877397] RTL871X: #### hw_var_set_opmode() -5260 iface_type(0) mode = 2 ####
+[   23.891152] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   23.909915] RTL871X: MAC Address = XX:XX:XX:XX:XX:XX
+[   23.916314] RTL871X: rx C2H_PACKET, ID=11, seq=0, len=7
+[   23.921773] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   23.927583] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   23.933784] RTL871X: SetHwRegWithBuf8723B len=9 
+[   23.938575] RTL871X: -871x_drv - drv_open, bup=1
+[   23.944378] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+cat: /data/scripts/confnet/dhcpcd/eth: No such file or directory
+[....] Running /etc/init.d/networking restart is deprecated because it may not re-enable some interfaces ...[warn (warning).
+[....] Reconfiguring network interfaces...[   25.120555] RTL871X: (2)871x_drv - drv_close, bup=1, hw_init_completed=1
+[   25.131829] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   25.144201] RTL871X: indicate disassoc
+[   25.148160] RTL871X: HW_VAR_BASIC_RATE: 0x15f -> 0x15f -> 0x15f
+[   25.155701] RTL871X: -871x_drv - drv_close, bup=1
+[   25.161192] RTL871X: +871x_drv - drv_open, bup=1
+[   25.166389] RTL871X: -871x_drv - drv_open, bup=1
+[   25.171371] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   25.178642] RTL871X: (2)871x_drv - drv_close, bup=1, hw_init_completed=1
+[   25.189816] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   25.202205] RTL871X: indicate disassoc
+[   25.206167] RTL871X: HW_VAR_BASIC_RATE: 0x15f -> 0x15f -> 0x15f
+[   25.213449] RTL871X: -871x_drv - drv_close, bup=1
+[   25.218983] RTL871X: +871x_drv - drv_open, bup=1
+[   25.224201] RTL871X: -871x_drv - drv_open, bup=1
+[   25.229126] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   25.237185] RTL871X: [rtw_wx_set_pmkid] IW_PMKSA_FLUSH!
+[   25.242928] RTL871X: set_mode = IW_MODE_INFRA
+[   25.247900] RTL871X: set bssid:XX:XX:XX:XX:XX:XX
+[   25.253488] RTL871X: #### hw_var_set_opmode() -5260 iface_type(0) mode = 2 ####
+ioctl[SIOCSIWAP]: Operation not p[   25.264617] RTL871X: =>rtw_wx_set_essid
+ermitted
+[   25.270142] RTL871X: ssid=REMOVED, len=32
+[   25.277718] RTL871X: set ssid [REMOVED] fw_state=0x00000008
+[   25.286625] RTL871X: Set SSID under fw_state=0x00000008
+[   25.292477] RTL871X: <=rtw_wx_set_essid, ret 0
+[   25.300813] RTL871X: rx C2H_PACKET, ID=9, seq=1, len=7
+[   25.306091] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   25.311879] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   25.324209] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   25.341746] RTL871X: SetHwRegWithBuf8723B len=9 
+[   25.352998] RTL871X: rx C2H_PACKET, ID=11, seq=2, len=7
+[   25.358331] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   25.364195] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   25.369698] RTL871X: rx C2H_PACKET, ID=11, seq=3, len=7
+[   25.374992] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   25.380779] RTL871X: -rtl8723bu_c2h_packet_handler()
+ioctl[SIOCSIWENCODEEXT]: Invalid [   25.416984] RTL871X: [rtw_wx_set_pmkid] IW_PMKSA_FLUSH!
+argument
+ioctl[SIOCSIWENCODEEXT]: Invalid argument
+[   25.562784] RTL871X: rx C2H_PACKET, ID=11, seq=4, len=7
+[   25.568188] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   25.574134] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   25.580159] RTL871X: rx C2H_PACKET, ID=11, seq=5, len=7
+[   25.585550] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   25.591396] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   25.601696] RTL871X: SetHwRegWithBuf8723B len=9 
+[   25.606355] RTL871X: SetHwRegWithBuf8723B len=9 
+[   25.625941] RTL871X: ===>phy_SwChnl8723B: Channel = 2
+[   25.637082] RTL871X: SetHwRegWithBuf8723B len=9 
+[   25.642226] RTL871X: SetHwRegWithBuf8723B len=9 
+[   25.736388] RTL871X: ===>phy_SwChnl8723B: Channel = 3
+[   25.855902] RTL871X: ===>phy_SwChnl8723B: Channel = 4
+[   25.976021] RTL871X: ===>phy_SwChnl8723B: Channel = 5
+[   26.096022] RTL871X: ===>phy_SwChnl8723B: Channel = 6
+[   26.215895] RTL871X: ===>phy_SwChnl8723B: Channel = 7
+[   26.335899] RTL871X: ===>phy_SwChnl8723B: Channel = 8
+[   26.455897] RTL871X: ===>phy_SwChnl8723B: Channel = 9
+[   26.574083] RTL871X: ===>phy_SwChnl8723B: Channel = 10
+[   26.694825] RTL871X: ===>phy_SwChnl8723B: Channel = 11
+[   26.814082] RTL871X: ===>phy_SwChnl8723B: Channel = 12
+[   26.924076] RTL871X: ===>phy_SwChnl8723B: Channel = 13
+[   27.044325] RTL871X: ===>phy_SwChnl8723B: Channel = 1
+[   27.070678] RTL871X: rx C2H_PACKET, ID=9, seq=6, len=7
+[   27.075949] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   27.081748] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   27.090212] RTL871X: survey done event(1a) band:0 for wlan0
+[   27.101640] RTL871X: SetHwRegWithBuf8723B len=9 
+[   27.112968] RTL871X: rx C2H_PACKET, ID=11, seq=7, len=7
+[   27.118287] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   27.124114] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   27.129568] RTL871X: rx C2H_PACKET, ID=11, seq=8, len=7
+[   27.134861] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   27.140651] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   27.221584] RTL871X: IsBtDisabled=0, IsBtControlLps=0
+[   27.322704] RTL871X: rx C2H_PACKET, ID=11, seq=9, len=7
+[   27.327986] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   27.333857] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   27.339200] RTL871X: rx C2H_PACKET, ID=11, seq=10, len=7
+[   27.344607] RTL871X: +rtl8723bu_c2h_packet_handler() length=9
+[   27.350395] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   27.372496] RTL871X: rtw_select_and_join_from_scanned_queue: return _FAIL(candidate == NULL)
+[   27.381006] RTL871X: try_to_join, but select scanning queue fail, to_roam:0
+[   27.388069] RTL871X: indicate disassoc
+[   27.408931] RTL871X: rtw_indicate_scan_done(wlan0)
+[   27.441916] RTL871X: wpa_set_auth_algs, AUTH_ALG_OPEN_SYSTEM
+[   27.447792] RTL871X: set_mode = IW_MODE_INFRA
+[   27.452722] RTL871X: SetHwRegWithBuf8723B len=9 
+[   27.457418] RTL871X: SetHwRegWithBuf8723B len=9 
+[   27.491843] RTL871X: 
+[   27.491843]  wpa_ie(length:22):
+[   27.506871] RTL871X: 0x30 0x14 0x01 0x00 0x00 0x0f 0xac 0x04 
+[   27.517241] RTL871X: SetHwRegWithBuf8723B len=9 
+[   27.538734] RTL871X: SetHwRegWithBuf8723B len=9 
+[   27.543848] RTL871X: 0x01 0x00 0x00 0x0f 0xac 0x04 0x01 0x00 
+[   27.549619] RTL871X: 0x00 0x0f 0xac 0x02 0x00 0x00 0x00 0x00 
+[   27.557336] RTL871X: #### hw_var_set_opmode() -5260 iface_type(0) mode = 2 ####
+[   27.580845] RTL871X: SetHwReg8723B, 6379, RCR= 700078bb
+[   27.597584] RTL871X: =>rtw_wx_set_essid
+[   27.601462] RTL871X: ssid=REMOVED, len=8
+[   27.611708] RTL871X: set ssid [REMOVED] fw_state=0x00000008
+[   27.617402] RTL871X: Set SSID under fw_state=0x00000008
+[   27.622771] RTL871X: [by_bssid:0][assoc_ssid:REMOVED][to_roam:0] new candidate: REMOVED(XX:XX:XX:XX:XX:XX, ch1) rssi:-77
+[   27.633892] RTL871X: [by_bssid:0][assoc_ssid:REMOVED][to_roam:0] new candidate: REMOVED(XX:XX:XX:XX:XX:XX, ch11) rssi:-58
+[   27.645092] RTL871X: rtw_select_and_join_from_scanned_queue: candidate: REMOVED(XX:XX:XX:XX:XX:XX, ch:11)
+[   27.654799] RTL871X: [HT] Support STBC = 0x01
+[   27.659187] RTL871X: declare supporting RX STBC
+[   27.663765] RTL871X: link to Artheros AP
+[   27.668799] RTL871X: start_join_set_ch_bw: ch=11, bwmode=0, ch_offset=0
+[   27.692708] RTL871X: ===>phy_SwChnl8723B: Channel = 11
+[   27.701853] RTL871X: <=rtw_wx_set_essid, ret 0
+[   27.716029] RTL871X: set bssid:XX:XX:XX:XX:XX:XX
+[   27.735219] RTL871X: Set BSSID under fw_state=0x00000088
+[   27.774200] RTL871X: link to Artheros AP
+[   27.778166] RTL871X: start auth
+[   27.781330] RTL871X: issue_auth
+[   27.791433] RTL871X: OnAuthClient
+[   27.794917] RTL871X: auth success, start assoc
+[   27.799408] RTL871X: network.SupportedRates[0]=82
+[   27.804153] RTL871X: network.SupportedRates[1]=84
+[   27.808884] RTL871X: network.SupportedRates[2]=8B
+[   27.813620] RTL871X: network.SupportedRates[3]=96
+[   27.818335] RTL871X: network.SupportedRates[4]=8C
+[   27.823067] RTL871X: network.SupportedRates[5]=12
+[   27.827781] RTL871X: network.SupportedRates[6]=98
+[   27.832513] RTL871X: network.SupportedRates[7]=24
+[   27.837226] RTL871X: network.SupportedRates[8]=B0
+[   27.841956] RTL871X: network.SupportedRates[9]=48
+[   27.846669] RTL871X: network.SupportedRates[10]=60
+[   27.851469] RTL871X: network.SupportedRates[11]=6C
+[   27.856288] RTL871X: bssrate_len = 12
+[   27.868427] RTL871X: OnAssocRsp
+[   27.871723] RTL871X: report_join_res(4)
+[   27.875586] RTL871X: rtw_joinbss_update_network
+[   27.880176] RTL871X: +rtw_update_ht_cap()
+[   27.884253] RTL871X: rtw_alloc_macid = 0
+[   27.888189] RTL871X: rtw_joinbss_update_stainfo
+[   27.892776] RTL871X: ### Set STA_(0) info ###
+[   27.897153] RTL871X: assoc success
+[   27.901060] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[   27.907678] RTL871X: HW_VAR_BASIC_RATE: 0x15f -> 0x15f -> 0x15f
+[   27.928669] RTL871X: send eapol packet
+[   27.932573] RTL871X: YJ: rtl8723b_fill_default_txdesc(): ARP Data: userate=1, datarate=0x0
+[   27.942048] RTL871X: WMM(0): 0, a42b
+[ ok [   27.951786] RTL871X: WMM(1): 0, a44f
+[   27.961922] RTL871X: WMM(2): 0, 5e4322
+[   27.969000] RTL871X: WMM(3): 0, 2f3222
+[   27.981387] RTL871X: wmm_para_seq(0): 0
+[   27.986566] RTL871X: send eapol packet
+[   27.990391] RTL871X: YJ: rtl8723b_fill_default_txdesc(): ARP Data: userate=1, datarate=0x0
+done.
+[   28.007792] RTL871X: wmm_para_seq(1): 1
+[   28.015090] RTL871X: wmm_para_seq(2): 2
+[   28.018990] RTL871X: wmm_para_seq(3): 3
+[   28.023526] RTL871X:  ~~~~set sta key:unicastkey
+[   28.032265] RTL871X: HTOnAssocRsp
+[   28.040975] RTL871X:  ~~~~set sta key:groupkey
+[   28.048709] RTL871X: ===>phy_SwChnl8723B: Channel = 11
+[   28.059498] RTL871X: ==> rtw_set_key algorithm(4),keyid(1),key_mask(0)
+[   28.079720] RTL871X: UpdateHalRAMask8723B(): mac_id=0 rssi_level=0
+[   28.101695] RTL871X: UpdateHalRAMask8723B => mac_id:0, networkType:0x0b, mask:0x000fffff
+[   28.101695] 	 ==> rssi_level:0, rate_bitmap:0x000ff005
+[   28.141719] RTL871X: rtl8723b_set_FwMacIdConfig_cmd(): mac_id=0 raid=0x3 bw=0 mask=0xff005
+dhcpcd[2314]: sending signal 15 to pid 1756
+dhcpcd[2314]: waiting for pid 175[   28.163027] RTL871X: UpdateHalRAMask8723B(): mac_id=0 raid=0x3 bw=0 mask=0xff005 init_rate=0x13
+6 to exit
+[   28.179707] RTL871X: rtl8723b_set_FwMediaStatusRpt_cmd(): mstatus = 1 macid=0
+[   28.198863] RTL871X: SetHwReg8723B(wlan0): [HW_VAR_MACID_WAKEUP] macid=0, org MACID_SLEEP=0x00000000
+[   28.218716] RTL871X: +rtl8723b_download_rsvd_page(wlan0): iface_type=0 mstatus(1)
+[   28.238361] RTL871X: rtl8723b_set_FwRsvdPagePkt: Set RSVD page location to Fw ,TotalPacketLen(842), TotalPageNum(6)
+[   28.257402] RTL871X: 8723BRsvdPageLoc: ProbeRsp=0 PsPoll=2 Null=3 QoSNull=4 BTNull=5
+[   28.274841] RTL871X: wlan0: 1 DL RSVD page success! DLBcnCount:1, poll:1
+[   28.289081] RTL871X: =>mlmeext_joinbss_event_callback
+[   28.299998] RTL871X: set pairwise key camid:4, addr:XX:XX:XX:XX:XX:XX, kid:0, type:AES
+[   28.323098] RTL871X: set group key camid:5, addr:XX:XX:XX:XX:XX:XX, kid:1, type:AES
+[   28.337231] RTL871X: SetHwReg8723B, 6372, RCR= 700078ff
+[   28.407592] RTL871X: YJ: rtl8723b_fill_default_txdesc(): ARP Data: userate=1, datarate=0x0
+[   28.527091] RTL871X: OnAction_back
+[   28.530532] RTL871X: OnAction_back, action=0
+[   28.534924] RTL871X: issue_action_BA, category=3, action=1, status=0, rxbuf_sz=64
+dhcpcd[2453]: version 5.5.6 starting
+[   29.221567] RTL871X: IsBtDisabled=0, IsBtControlLps=0
+[   29.234344] RTL871X: UpdateHalRAMask8723B(): mac_id=0 rssi_level=2
+[   29.240568] RTL871X: UpdateHalRAMask8723B => mac_id:0, networkType:0x0b, mask:0x000fffff
+[   29.240568] 	 ==> rssi_level:2, rate_bitmap:0x000ff000
+[   29.275026] RTL871X: rtl8723b_set_FwMacIdConfig_cmd(): mac_id=0 raid=0x3 bw=0 mask=0xff000
+[   29.295089] RTL871X: UpdateHalRAMask8723B(): mac_id=0 raid=0x3 bw=0 mask=0xff000 init_rate=0x13
+[   29.413763] RTL871X: rx C2H_PACKET, ID=12, seq=11, len=4
+[   29.419112] RTL871X: +rtl8723bu_c2h_packet_handler() length=6
+[   29.424984] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   29.430191] RTL871X: SetHwRegWithBuf8723B len=6 
+[   29.516118] RTL871X: rx C2H_PACKET, ID=12, seq=12, len=4
+[   29.521467] RTL871X: +rtl8723bu_c2h_packet_handler() length=6
+[   29.527326] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   29.532556] RTL871X: SetHwRegWithBuf8723B len=6 
+dhcpcd[2453]: wlan0: sending IPv6 Router Solicitation
+dhcpcd[2453]: wlan0: rebinding lease of 10.69.0.57
+[   29.662972] RTL871X: YJ: rtl8723b_fill_default_txdesc(): ARP Data: userate=1, datarate=0x0
+dhcpcd[2453]: eth1: waiting for carrier
+[   29.720970] RTL871X: rx C2H_PACKET, ID=12, seq=13, len=4
+[   29.726327] RTL871X: +rtl8723bu_c2h_packet_handler() length=6
+[   29.732119] RTL871X: -rtl8723bu_c2h_packet_handler()
+[   29.737179] RTL871X: SetHwRegWithBuf8723B len=6 
+dhcpcd[2453]: wlan0: acknowledged 10.69.0.57 from 10.69.0.9
+dhcpcd[2453]: wlan0: leased 10.69.0.57 for 604800 seconds
+dhcpcd[2453]: forked to background, child pid 2641
+
+Debian GNU/Linux 7 XXXX ttymxc0
+
+XXXX login: 
