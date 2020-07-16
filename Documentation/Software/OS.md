@@ -2,17 +2,17 @@
 
 ## Introduction
 
-The device is running XXXX - a modifier version of [Debian](https://www.debian.org) GNU/Linux. So far we have only seen devices running XXXXX which is based on [Debian 7.0 (*Wheezy*)](https://wiki.debian.org/DebianWheezy).
+The device is running [Debian](https://www.debian.org) GNU/Linux. So far we have only seen devices running [Debian 7.0 (*Wheezy*)](https://wiki.debian.org/DebianWheezy).
 
 ## Booting
 
-For information about booting the operating system, read the [U-Boot page](UBoot).
+For information about booting the operating system, read the [U-Boot page](UBoot.md).
 
 # Access
 
 The operating system is running `getty` on the console device, but requires username and password for shell access. Since the device is running an SSH daemon on port 59282, you might as well use that instead, once you have created a user in single user mode.
 
-For information on console port access and booting the device in single user mode, see the [U-Boot page](UBoot).
+For information on console port access and booting the device in single user mode, see the [U-Boot page](UBoot.md).
 
 The operating system starts an SSH daemon on port 59282. Passwords are not known at this point, so you will have to overwrite them.
 

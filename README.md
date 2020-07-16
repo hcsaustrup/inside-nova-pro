@@ -40,4 +40,4 @@ Read more about the software [here](Documentation/Software/).
 
 ## Contributing
 
-At time of writing (July 2020), this is a one man effort, so your help would be much appreciated. Feel free to clone this repository and make a pull request with your contributions. Take a look at the [TODO list](TODO) for inspiration. If you want to say hi, there is a [Facebook group](https://www.facebook.com/groups/s6evo.inside/).
+At time of writing (July 2020), this is a one man effort, so your help would be much appreciated. Feel free to clone this repository and make a pull request with your contributions. Take a look at the [TODO list](TODO.md) for inspiration. If you want to say hi, there is a [Facebook group](https://www.facebook.com/groups/s6evo.inside/).

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The system is based around the i.MX6UL SoM by Chinese company Forlinx. We refer to that as the *CPU Board*. It features a Arm® Cortex®-A7 processor as well as RAM and NVRAM. The CPU Board is mounted on another board, which we call the [I/O Board](IO-Board). 
+The system is based around the i.MX6UL SoM by Chinese company Forlinx. We refer to that as the *CPU Board*. It features a Arm® Cortex®-A7 processor as well as RAM and NVRAM. The CPU Board is mounted on another board, which we call the [I/O Board](IO-Board.md). 
 
 ## Versions
 
