@@ -26,7 +26,7 @@ DinsafeR is the OEM, but the product range is branded, sold and supported by loc
 
 ## Hardware
 
-The system is based around the i.MX6UL SoM by Chinese company Forlinx. We refer to that as the *CPU Board*. It features a Arm® Cortex®-A7 processor as well as RAM and NVRAM. The CPU Board is mounted on another board, which we call the *I/O Board*. This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The I/O board also receives power from an external power supply and holds the battery.
+The system is based around the i.MX6UL SoM by Chinese company Forlinx. We refer to that as the [CPU Board](Documentation/Hardware/CPU-Board.md). It features a Arm® Cortex®-A7 processor as well as RAM and NVRAM. The CPU Board is mounted on another board, which we call the [I/O Board](Documentation/Hardware/IO-Board.md). This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The I/O board also receives power from an external power supply and holds the battery.
 
 Read more about the hardware [here](Documentation/Hardware/).
 
