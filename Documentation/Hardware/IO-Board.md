@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The I/O board also receives power from an external power supply and holds the battery.
+This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The I/O board also receives power from an external power supply and holds the battery. The I/O board also holds the [CPU Board](CPU-Board.md). 
 
 ## Versions
 
