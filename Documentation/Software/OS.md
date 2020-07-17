@@ -18,23 +18,13 @@ The operating system starts an SSH daemon on port 59282. Passwords are not known
 
 ## Packages
 
-Being a Debian based system, the tool used for installing packages is `apt-get`. Unfortunately, the references repositories for Wheezy are no longer available, making it impossible to update or install additional packages without changing the configuration.
-
-Current configuration (/etc/apt/sources.list):
-
-```
-deb http://ftp.cn.debian.org/debian/ wheezy main non-free contrib
-deb http://ftp.cn.debian.org/debian/ wheezy-updates main non-free contrib
-deb http://ftp.cn.debian.org/debian/ wheezy-backports main non-free contrib
-deb-src http://ftp.cn.debian.org/debian/ wheezy main non-free contrib
-deb-src http://ftp.cn.debian.org/debian/ wheezy-updates main non-free contrib
-deb-src http://ftp.cn.debian.org/debian/ wheezy-backports main non-free contrib
-```
-
-When trying to use these repositories, you will get the following error:
+Being a Debian based system, the tool used for installing packages is `apt-get`.
+Unfortunately the package repository has been rearranged over time, and the current *Wheezy* version has been relocated to the archive section. A temporary workaround is to add `/debian-archive` to the URLs in `/etc/apt/sources.list`:
 
 ```
-W: 无法下载 http://ftp.cn.debian.org/debian/dists/wheezy/contrib/source/Sources  404  Not Found [IP: 45.125.0.6 80]
+deb http://ftp.cn.debian.org/debian-archive/debian/ wheezy main non-free contrib
+deb http://ftp.cn.debian.org/debian-archive/debian/ wheezy-updates main non-free contrib
+deb http://ftp.cn.debian.org/debian-archive/debian/ wheezy-backports main non-free contrib
 ```
 
 ## Guides
