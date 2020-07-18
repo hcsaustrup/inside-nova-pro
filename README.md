@@ -32,7 +32,7 @@ Read more about the hardware [here](Documentation/Hardware/).
 
 ## Software
 
-The system is based on open source software. It is running a Debian based GNU/Linux operating system. The version (7.0) on the device is outdated and not supported any more. The references package repositories are not available any more, currently making it impossible to update or install additional packages.
+The system is based on open source software. It is running a Debian based GNU/Linux operating system. The version (7.0) on the device is outdated and not supported any more. Changes must be applied to update or install additional packages.
 
 The applications running the actual alarm system are written in [Go](https://golang.org/). Go is a language that compiles directly to binary code and doesn't need a virtual machine or script interpreter to run. Library dependencies are statically linked and included in the binary, making it perfect for embedded systems like the NOVA.
 
