@@ -6,6 +6,8 @@
 * Find a newer Linux distribution for the device. This requires knowledge of device trees.
 * Build a Go application that can talk to the 433 MHz radio and other peripherals.
 * Figure out an easier way to gain access to the device.
+* Figure out how to select the secondary [boot loader](Documentation/Software/Modifications/Bootloader.md) device.
+* Update the [Net Booting](Documentation/Software/Modifications/Netbooting.md) section.
 
 # In progress
 

@@ -81,6 +81,16 @@ boot
 ```
 
 
+### Extracting data
+
+TODO
+
+
+### Net Booting
+
+It is possible to NFS mount the operating system. For details on this, see [Net Booting](Modifications/Netbooting.md) under [Modifications](Modifications/).
+
+
 ## Magic SysRq
 
 Once booted, the this Linux kernel has [Magic SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) enabled on the console. You can use this for various things, like rebooting the device without having to power it off.
