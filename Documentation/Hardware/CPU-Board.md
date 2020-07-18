@@ -19,7 +19,7 @@ The names *Type A* and *Type B* are temporary and subject to change. It's not kn
 
 ### Type A (Y001)
 
-* CPU: Freescale [i.MX6ULL](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i.mx-applications-processors/i.mx-6-processors/i.mx-6ull-single-core-processor-with-arm-cortex-a7-core:i.MX6ULL) 396MHz ([MCIMX6G2CVM05AA](https://www.nxp.com/part/MCIMX6G2CVM05AA#/)) (Includes Ethernet)
+* CPU: Freescale [i.MX6ULL](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i.mx-applications-processors/i.mx-6-processors/i.mx-6ull-single-core-processor-with-arm-cortex-a7-core:i.MX6ULL) 396MHz ([MCIMX6G2CVM05AA](https://www.nxp.com/part/MCIMX6G2CVM05AA#/))
 * DRAM: 512 MiB RAM (Nanya 1714 NT5CC256M160P-01)
 * NVRAM: 8 GiB eMMC ([THGBMFG6C1LBAIL](https://eu.mouser.com/ProductDetail/Kioxia-America/THGBMFG6C1LBAIL?qs=hicmRmzGcNTKfLV%252BlObBrg==))
 
@@ -28,7 +28,7 @@ The names *Type A* and *Type B* are temporary and subject to change. It's not kn
 
 This appears to be the latest version of the CPU boards NOVA uses. It's slightly faster, but lacks memory compared to the previous version. The CPU board on the Y005 model is covered entirely by a metal RF shield.
 
-* CPU: Freescale [i.MX6ULL](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i.mx-applications-processors/i.mx-6-processors/i.mx-6ull-single-core-processor-with-arm-cortex-a7-core:i.MX6ULL) 528 MHz ([MCIMX6G2CVM05AA](https://www.nxp.com/part/MCIMX6G2CVM05AA#/)) (Includes Ethernet)
+* CPU: Freescale [i.MX6ULL](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i.mx-applications-processors/i.mx-6-processors/i.mx-6ull-single-core-processor-with-arm-cortex-a7-core:i.MX6ULL) 528 MHz ([MCIMX6G2CVM05AA](https://www.nxp.com/part/MCIMX6G2CVM05AA#/))
 * DRAM: 256 MiB RAM
 * NVRAM: 8 GiB eMMC
 
