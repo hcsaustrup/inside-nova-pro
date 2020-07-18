@@ -36,5 +36,5 @@ This appears to be the latest version of the CPU boards NOVA uses. It's slightly
 ## Resources
  
 * [Forlinx iMX6UL Hardware Manual V1.5](../Assets/PDF/iMX6UL-HardwareManual-V1.5.pdf) (Mirror)
-
+* [iMX6 Rex](https://www.imx6rex.com/application/imx6-development-board/) - A different board entirely, but based on the i.MX6 and open source - perhaps a good source of information.
 
