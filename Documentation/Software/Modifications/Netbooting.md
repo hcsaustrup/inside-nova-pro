@@ -33,7 +33,20 @@ exportfs -av
 
 TODO: Explain how to dump MMC partitions - probably on the U-Boot page.
 
-Mount the image of the root filesystem, and copy the files to your NFS export directory, i.e. `/exports/nova02/root`.
+Now mount the dumped image of the root filesystem:
+
+```
+mkdir -p /mnt/nova-root
+mount mmcblk1p2.img /mnt/nova-root
+```
+
+And copy the files to exported NFS directory:
+
+```
+mkdir -p /exports/nova02/root
+cd /mnt/nova-root
+cp -av * /exports/nova02/root
+```
 
 Now is a good time to update the root password in `/etc/shadow`. Replace the encrypted password with `$6$i.NHvRTy$1w.SVwrBdI8FZT.GFdda1RS2dKFlq5iO2G8vVQAF4U5wnkMw35LQWqo1uEGo3GJhWw44.QoZsf2kf1fwzodMW/` to change it to `password`.
 
