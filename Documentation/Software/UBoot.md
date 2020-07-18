@@ -96,3 +96,9 @@ It is possible to NFS mount the operating system. For details on this, see [Net 
 Once booted, the this Linux kernel has [Magic SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) enabled on the console. You can use this for various things, like rebooting the device without having to power it off.
 
 To issue a SysRq command, first send a [serial break](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter#Break_condition) (`CTRL-A` in Minicom), followed by a SysRq command, i.e. `b` for forcing an immediate reboot (not recommended). The proper SysRq command sequence for safely rebooting the device is `u` for mounting all filesystems read-only, `s` for flushing buffers and syncing filesystems and finally `b` for rebooting.
+
+
+## Misc
+
+* https://wiki.dh-electronics.com/index.php/COM_iMX6_Bootloader_U-Boot - Different device, but has lots of interesting information, including how to unbrick.
+* https://www.youtube.com/watch?v=TX3Ppe26emY - Video on booting Freescale i.MX6. Interesting bit about loading the kernel over Kermit.
