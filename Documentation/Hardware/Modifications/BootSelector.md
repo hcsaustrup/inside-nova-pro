@@ -2,7 +2,7 @@
 
 Still being investigated. This may require soldering.
 
-Excerpt from the [CPU Board](../CPU-Board.md) manual, covering connector pinouts:
+Excerpt from the Forlinx [SOM](../SOM.md) manual, covering connector pinouts:
 
 | Num. | Ball | Signal     | GPIO         | Vol  | Spec.                 | Function              |
 | ------- | ---- | ---------- | ------------ | ---- | --------------------- | --------------------- |

@@ -71,7 +71,7 @@ Serial		: 0000000000000000
 
 ### Storage
 
-All storage resides an NVRAM chip on the [CPU Board](../Hardware/CPU-Board.md). It appears as 4 different disks:
+All storage resides an NVRAM chip on the [SOM](../Hardware/SOM.md). It appears as 4 different disks:
 
 | Device       | Size | Notes                                      |
 | ------------ | ---- | ------------------------------------------ |

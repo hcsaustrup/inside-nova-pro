@@ -6,7 +6,7 @@ For information about the operating system, go [here](OS).
 
 ## Accessing the Console
 
-Connect a 3.3V FTDI adapter (available on [AliExpress](https://www.aliexpress.com/wholesale?SearchText=FT232RL+FTDI) and [Banggood](https://www.banggood.com/search/ft232rl-ftdi.html) for next to nothing) to the console port on P2 on the device using test wires. The power from the FTDI adapter doesn't seem to be enough to drive the CPU and I/O board - using the battery as a power source is the safest, but you can also connect the power supply IF you disconnect the 3.3V power wire from from the FTDI adapter.
+Connect a 3.3V FTDI adapter (available on [AliExpress](https://www.aliexpress.com/wholesale?SearchText=FT232RL+FTDI) and [Banggood](https://www.banggood.com/search/ft232rl-ftdi.html) for next to nothing) to the console port on P2 on the device using test wires. The power from the FTDI adapter doesn't seem to be enough to drive the SOM and base board - using the battery as a power source is the safest, but you can also connect the power supply IF you disconnect the 3.3V power wire from from the FTDI adapter.
 
 Running with 3.3V from the FTDI adapter AND the mains power supply can make the charger give off a slightly disturbing humming sound and is not advised.
 
