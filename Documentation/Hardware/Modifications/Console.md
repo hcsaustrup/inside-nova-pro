@@ -10,16 +10,16 @@ Running with 3.3V from the FTDI adapter AND the mains power supply can make the 
 
 No pin header holes - you will have to solder wires to the pads.
 
-![Y001](../Assets/Images/y001-console-scaled.jpg)
-([Full size](../Assets/Images/y001-console.jpg))
+![Y001](../../Assets/Images/y001-console-scaled.jpg)
+([Full size](../../Assets/Images/y001-console.jpg))
 
 
 ### Console access on Y005
 
 Pin header holes - solder a header on, or keep one in place with a rubber band.
 
-![Y005](../Assets/Images/y005-console-scaled.jpg)
-([Full size](../Assets/Images/y005-console.jpg))
+![Y005](../../Assets/Images/y005-console-scaled.jpg)
+([Full size](../../Assets/Images/y005-console.jpg))
 
 ## Terminal access
 
