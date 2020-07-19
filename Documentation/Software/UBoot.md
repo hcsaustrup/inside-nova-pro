@@ -110,9 +110,15 @@ See [Storage](Storage.md).
 
 ## Extracting data
 
-Whether you're just curious, or aiming to [boot over NFS](Modifications/NFSBoot.md), you may want to extract partition images from the device. 
+While loading data from the MMC and dumping it in hex format to the terminal might sound like a viable solution, the available amount of RAM on the system will force you to cut the nearly 8GiB root filesystem partition up into numerous smaller pieces. This can be done, but it is quite tedious.
 
-TODO: Elaborate! ;-)
+An easier solution would be to dump the image through SSH. Here is an example, dumping the `ext3` root filesystem partition to an image file:
+
+```bash
+$ ssh root@nova-02 -p 59282 'cat /dev/mmcblk1p2 | gzip --fast | base64' | base64 -d | gzip -d > rootfs.img
+```
+
+Since the default root password is unknown, **you will first have to set a new one** by booting the system [directly to Bash](UBoot.md#direct-to-bash).
 
 
 ## Misc
