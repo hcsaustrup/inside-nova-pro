@@ -6,7 +6,7 @@ The device is running [Debian](https://www.debian.org) GNU/Linux. So far we have
 
 ## Booting
 
-For information about booting the operating system, read the [U-Boot page](UBoot.md). For information about booting from NFS, see [Net Booting](Modifications/Netbooting.md) under [Modifications](Modifications/).
+For information about booting the operating system, read the [U-Boot page](UBoot.md). For information about booting from NFS, see [NFS Booting](Modifications/NFSBoot.md) under [Modifications](Modifications/).
 
 
 # Access
@@ -71,23 +71,7 @@ Serial		: 0000000000000000
 
 ### Storage
 
-All storage resides an NVRAM chip on the [SOM](../Hardware/SOM.md). It appears as 4 different disks:
-
-| Device       | Size | Notes                                      |
-| ------------ | ---- | ------------------------------------------ |
-| mmcblk1rpmb  | 4M   |
-| mmcblk1boot0 | 4M   | Primary boot                               |
-| mmcblk1boot1 | 4M   | Secondary boot (unused)                            |
-| mmcblk1      | 7.2G | Available for kernels and operating system |
-
-Feeling adventurous? Consider updating the [Boot Loader](Modifications/Bootloader.md).
-
-The last disk is partitioned into two partitions:
-
-| Device    | Size | Part. Type   | Filesystem | Mount Point | Notes                      |
-| --------- | ---- | ------------ | ---------- | ----------- | -------------------------- |
-| mmcblk1p1 | 500M | 0x0c (FAT32) | vfat       | (/boot)     | Kernel (zImage), device tree files (dtb) |
-| mmcblk1p2 | 6.6G | 0x83 (Linux) | ext3       | /           | Operating system           |
+See [Storage](Storage.md).
 
 Output from `lsblk`:
 

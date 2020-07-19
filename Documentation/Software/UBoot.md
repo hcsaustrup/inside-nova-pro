@@ -1,101 +1,118 @@
 # U-Boot
 
-The device uses [U-Boot](https://en.wikipedia.org/wiki/Das_U-Boot) to boot the operating system. You will need to access the boot loader to boot the device in single user mode.
+The device uses [U-Boot](https://en.wikipedia.org/wiki/Das_U-Boot) to boot the operating system. You will need to access the boot loader to boot the device in single user mode or [boot over NFS](Modifications/NFSBoot.md). For this, you will need [access to the console](../Hardware/Modifications/Console.md).
 
 For information about the operating system, go [here](OS).
 
-## Accessing the Console
 
-Connect a 3.3V FTDI adapter (available on [AliExpress](https://www.aliexpress.com/wholesale?SearchText=FT232RL+FTDI) and [Banggood](https://www.banggood.com/search/ft232rl-ftdi.html) for next to nothing) to the console port on P2 on the device using test wires. The power from the FTDI adapter doesn't seem to be enough to drive the SOM and base board - using the battery as a power source is the safest, but you can also connect the power supply IF you disconnect the 3.3V power wire from from the FTDI adapter.
+## Environment
 
-Running with 3.3V from the FTDI adapter AND the mains power supply can make the charger give off a slightly disturbing humming sound and is not advised.
+Below is the default environment for the device. Environment variables are used for configuration and scripting. An example of the latter, is the `boot` command, which actually runs the script defined in the `bootcmd` environment variable.
 
-The connection is 115200N81 without hardware flow control. If connected correctly, you should see something like this when powering the unit on:
-
-```
-U-Boot 2016.03-21152-ga57b13b942-dirty (Aug 14 2018 - 11:25:39 +0800)
-
-CPU:   Freescale i.MX6ULL rev1.1 528 MHz (running at 396 MHz)
-CPU:   Industrial temperature grade (-40C to 105C) at 41C
-Reset cause: POR
-Board: MX6ULL 14x14 EVK
-I2C:   ready
-DRAM:  256 MiB
-MMC:   FSL_SDHC: 0, FSL_SDHC: 1
-*** Warning - bad CRC, using default environment
-
-In:    serial
-Out:   serial
-Err:   serial
-switch to partitions #0, OK
-mmc1(part 0) is current device
-Net:   FEC0
-Error: FEC0 address not set.
-
-Normal Boot
-Hit any key to stop autoboot:  3
-```
-
-If you're unable to interrupt the boot sequence, you probably forgot to disable hardware flow control.
-
-
-### Console access on Y001
-
-No pin header holes - you will have to solder wires to the pads.
-
-![Y001](../Assets/Images/y001-console-scaled.jpg)
-([Full size](../Assets/Images/y001-console.jpg))
-
-
-### Console access on Y005
-
-Pin header holes - solder a header on, or keep one in place with a rubber band.
-
-![Y005](../Assets/Images/y005-console-scaled.jpg)
-([Full size](../Assets/Images/y005-console.jpg))
+| Variable         | Value                                                                                                                                                                                                                                                                                                                                                                                          | Notes |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `baudrate`       | `115200`                                                                                                                                                                                                                                                                                                                                                                                       |
+| `boot_fdt`       | `try`                                                                                                                                                                                                                                                                                                                                                                                          |
+| `bootcmd`        | `if mmc rescan; then if run loadbootscript; then run bootscript; else if test ${bootdev} = sd1; then echo update emmc.........;run update_emmc;else echo mmc boot..........;if run loadimage; then run mmcboot; else run netboot; fi; fi; fi; else run netboot; fi;`                                                                                                                           |
+| `bootcmd_mfg`    | `run mfgtool_args;bootz ${loadaddr} ${initrd_addr} ${fdt_addr};`                                                                                                                                                                                                                                                                                                                               |
+| `bootdelay`      | `3`                                                                                                                                                                                                                                                                                                                                                                                            |
+| `bootdev`        | `mmc2`                                                                                                                                                                                                                                                                                                                                                                                         |
+| `bootscript`     | `echo Running bootscript from mmc ...; source`                                                                                                                                                                                                                                                                                                                                                 |
+| `console`        | `ttymxc0`                                                                                                                                                                                                                                                                                                                                                                                      |
+| `ethact`         | `FEC1`                                                                                                                                                                                                                                                                                                                                                                                         |
+| `ethprime`       | `FEC`                                                                                                                                                                                                                                                                                                                                                                                          |
+| `fdt_addr`       | `0x83000000`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `fdt_file`       | `imx6ul-14x14-evk.dtb`                                                                                                                                                                                                                                                                                                                                                                         |
+| `fdt_high`       | `0xffffffff`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `filesize`       | `5e036`                                                                                                                                                                                                                                                                                                                                                                                        |
+| `image`          | `zImage`                                                                                                                                                                                                                                                                                                                                                                                       |
+| `initrd_addr`    | `0x83800000`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `initrd_high`    | `0xffffffff`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `ip_dyn`         | `yes`                                                                                                                                                                                                                                                                                                                                                                                          |
+| `loadaddr`       | `0x80800000`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `loadbootscript` | `fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};`                                                                                                                                                                                                                                                                                                                                      |
+| `loadfdt`        | `fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}`                                                                                                                                                                                                                                                                                                                                     |
+| `loadimage`      | `fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}`                                                                                                                                                                                                                                                                                                                                        |
+| `mfgtool_args`   | `setenv bootargs console=${console},${baudrate} rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storage.iSerialNumber="" clk_ignore_unused `                                                                                                                                                           |
+| `mmcargs`        | `setenv bootargs console=${console},${baudrate} root=${mmcroot}`                                                                                                                                                                                                                                                                                                                               |
+| `mmcautodetect`  | `yes`                                                                                                                                                                                                                                                                                                                                                                                          |
+| `mmcboot`        | `echo Booting from mmc ...; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;`                                                                                                                              |
+| `mmcdev`         | `1`                                                                                                                                                                                                                                                                                                                                                                                            |
+| `mmcpart`        | `1`                                                                                                                                                                                                                                                                                                                                                                                            |
+| `mmcroot`        | `/dev/mmcblk1p2 rootwait rw`                                                                                                                                                                                                                                                                                                                                                                   |
+| `netargs`        | `setenv bootargs console=${console},${baudrate} root=/dev/nfs ip=dhcp nfsroot=${serverip}:${nfsroot},v3,tcp`                                                                                                                                                                                                                                                                                   |
+| `netboot`        | `echo Booting from net ...; run netargs; if test ${ip_dyn} = yes; then setenv get_cmd dhcp; else setenv get_cmd tftp; fi; ${get_cmd} ${image}; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if ${get_cmd} ${fdt_addr} ${fdt_file}; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;` |
+| `panel`          | `TFT70AB`                                                                                                                                                                                                                                                                                                                                                                                      |
+| `script`         | `boot.scr`                                                                                                                                                                                                                                                                                                                                                                                     |
+| `splashimage`    | `0x90000000`                                                                                                                                                                                                                                                                                                                                                                                   |
+| `update_emmc`    | `mmc rescan;fatload mmc 0 ${loadaddr} /bin/${image}; fatload mmc 0 ${initrd_addr} /bin/ramdisk.img.u; fatload mmc 0 ${fdt_addr} /bin/imx6ul-14x14-evk.dtb; set bootargs console=${console},${baudrate} rdinit=/linuxrc; bootz ${loadaddr} ${initrd_addr} ${fdt_addr};`                                                                                                                         |
 
 
-## Information
+### Boot configuration
 
-TODO
+While not entirely the right way, the easiest way to modify boot parameters, is to modify `mmcroot`. Here are a few examples:
 
+#### Normal boot
 
-## U-Boot Usage
-
-Here are a few examples for using the boot loader:
-
-
-### Setting a fixed Ethernet hardware address
+This will boot from the root partition on the MMC:
 
 ```
-setenv ethaddr ca:fe:ba:be:12:34
-saveenv
-```
-
-
-### Bypass init system and start shell
-
-```
-setenv mmcroot /dev/mmcblk1p2 rootwait rw init=/bin/bash
+setenv mmcroot /dev/mmcblk1p2 rootwait panic=10 rw
 boot
 ```
 
+#### Direct to Bash
 
-### Extracting data
+This will boot from the root partition on the MMC, but will bypass the normal System V initd startup, and run Bash as the first process. You will have full access to the filesystem, but you will be responsible for syncing and unmounting after writing.
 
-TODO
+```
+setenv mmcroot /dev/mmcblk1p2 rootwait init=/bin/bash panic=10 rw
+boot
+```
+
+Once booted, you can set a new root password with `passwd root`, followed by `sync` and `exit`. Wait 10 seconds for automatic panic reboot.
+
+#### NFS boot
+
+```
+setenv mmcroot /dev/nfs ip=:::::eth1:dhcp nfsroot=XX.XX.XX.XX:/exports/nova02/root,v4,tcp panic=10 rw
+boot
+```
+
+See [NFS booting](Modifications/NFSBoot.md).
 
 
-### Net Booting
+### Network configuration
 
-It is possible to NFS mount the operating system. For details on this, see [Net Booting](Modifications/Netbooting.md) under [Modifications](Modifications/).
+By default, the device doesn't have a Ethernet hardware address defined. This may confuse your DHCP server (i.e. router), so it's suggested to set this thorugh the environment. Example:
+
+```
+setenv ethaddr ca:fe:ba:be:00:02
+save
+```
 
 
-## Magic SysRq
+### Resetting environment
 
-Once booted, the this Linux kernel has [Magic SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) enabled on the console. You can use this for various things, like rebooting the device without having to power it off.
+To reset the environment, run this command:
 
-To issue a SysRq command, first send a [serial break](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter#Break_condition) (`CTRL-A` `F` in Minicom), followed by a SysRq command, i.e. `b` for forcing an immediate reboot (not recommended). The proper SysRq command sequence for safely rebooting the device is `u` for mounting all filesystems read-only, `s` for flushing buffers and syncing filesystems and finally `b` for rebooting.
+```
+env default -a -f
+setenv bootdev mmc2
+save
+```
+
+
+## Storage
+
+See [Storage](Storage.md).
+
+
+## Extracting data
+
+Whether you're just curious, or aiming to [boot over NFS](Modifications/NFSBoot.md), you may want to extract partition images from the device. 
+
+TODO: Elaborate! ;-)
 
 
 ## Misc
