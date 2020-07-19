@@ -6,9 +6,11 @@ This board has all the I/O peripherals needed to communicate with sensors, netwo
 
 ## Versions
 
-### Quick Overview
+At least two different versions of the unit exists. We will try to keep the common parts here, and separate the differences in version specific pages.
 
-| &nbsp;      | Y001                                     | Y005                         |
+### Quick Comparison
+
+| &nbsp;      | [Y001](BaseBoard-Y001.md)                | [Y005](BaseBoard-Y005.md)    |
 | ----------- | ---------------------------------------- | ---------------------------- |
 | GSM         | SIM800C                                  | SIM800C                      |
 | WLAN        | Realtek RTL8723BU                        | Realtek RTL8723BU            |
@@ -16,117 +18,54 @@ This board has all the I/O peripherals needed to communicate with sensors, netwo
 | RF Decoder? | STM32F103VC                              | Nuvoton NUC121LC2AE          |
 
 
-### Y001
+## GSM Connectivity
 
-Full revision printed on board: **Y001-V1.5.1**
-
-![Y001](../Assets/Images/y001-inside-scaled.jpg)
-([Full size](../Assets/Images/y001-inside.jpg))
-
-#### GSM Connectivity
-
-A [SIM800C](https://www.simcom.com/product/SIM800C.html) package is mounted on U5, providing GSM connectivity through ANT1.
+A [SIM800C](https://www.simcom.com/product/SIM800C.html) package is mounted on U5, providing GSM connectivity through ANT1. Needs to be enabled by setting [GPIO 128](#gpios)?
 
 ![SIM800C](../Assets/Images/y001-u5-sim800c-scaled.jpg)
 ([Full size](../Assets/Images/y001-u5-sim800c.jpg))
 
 
-#### WLAN Connectivity
+## WLAN Connectivity
 
-A [Realtek RTL8723BU](https://www.realtek.com/en/products/communications-network-ics/item/rtl8723bu) package is mounted on U12, providing WLAN connectivity through ANT2.
+A [Realtek RTL8723BU](https://www.realtek.com/en/products/communications-network-ics/item/rtl8723bu) package is mounted on U12, providing WLAN connectivity through ANT2. Needs to be enabled by lowering [GPIO 132](#gpios).
 
 ![RTL8723BU](../Assets/Images/y001-u12-rtl8723bu-scaled.jpg)
 ([Full size](../Assets/Images/y001-u12-rtl8723bu.jpg))
 
 
-#### RF Radio
+#### GPIOs
 
-A [Princeton Technology Corp PT4304-X](http://www.princeton.com.tw/Portals/0/PT4304-s.pdf) OOK/ASK receiver for the 315/433.92 MHz frequency bands is mounted on U17 and is responsible for handling RF radio. Using an oscilloscope on the nearby 3 pin header will show radio trafic on the 433 MHz band. It uses ANT3 for receiving.
+This information is recovered from `/data/scripts/start/gpio_init.sh`. Values marked *default* are the values explicitly set by the script, not the boot time defaults:
 
-TODO: Transmission uses ANT4
+| GPIO | Direction | Description        | Notes                        |
+| ---- | --------- | ------------------ | ---------------------------- |
+| 1    | out       | Red LED            | 0: (default)                 |
+| 2    | out       | Blue LED           | 1: (default)                 |
+| 3    | out       | Green LED          | 1: (default)                 |
+| 4    | out       | GSM DTR            |
+| 8    | out       | STM32 enabled      | 0: no <br/> 1: yes (default) | Power-cycled on startup. Only on Y001?  |
+| 9    | in        | Reset button       |
+| 128  | out       | GSM enable         | 0: (default)                 |
+| 129  | in        | GSM discovery(?)   |
+| 130  | out       | mic                | 1: (default)                 |
+| 132  | out       | WLAN enabled       | 0: yes (default) <br/> 1: no | Enables or disabled the RTL 8723BU WLAN |
+| 135  | in        | Wifi button(?)     |
+| 136  | out       | Intercom switch(?) | 1: (default)                 |
+| 137  | in        | SIM card inserted  |
 
-![PT4304-X](../Assets/Images/y001-u17-pt4304-scaled.jpg)
-([Full size](../Assets/Images/y001-u17-pt4304.jpg))
+Define and get an input GPIO like this:
 
+```
+echo 9  > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio9/direction
+cat       /sys/class/gpio/gpio9/value
+```
 
-#### RF Decoder?
+Define and set an output GPIO like this:
 
-An [STM32 F103VC](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) processor with 48 KiB RAM and 256 KiB NVRAM and is mounted on U16. It may be used for RF signal decoding/processing, but we are unsure at this point.
-
-![STM32](../Assets/Images/y001-u16-stm32-scaled.jpg)
-([Full size](../Assets/Images/y001-u16-stm32.jpg))
-
-
-#### Mystery Header U19
-
-At this time, it is unknown exactly what U19 was meant for. We're hoping for an SD-Card adapter :-)
-
-![U19](../Assets/Images/y001-u19-scaled.jpg)
-([Full size](../Assets/Images/y001-u19.jpg))
-
-
-#### USB2 Controller
-
-Next to the Mystery Header (U19), an [SMSC USB2514B](https://pdf1.alldatasheet.com/datasheet-pdf/view/312091/SMSC/USB2514B.html) USB2 controller package is mounted on U13. These may be related.
-
-![U19](../Assets/Images/y001-u13-usb2514b-scaled.jpg)
-([Full size](../Assets/Images/y001-u13-usb2514b.jpg))
-
-
-#### GPIO
-
-TODO
-
-
-### Y005
-
-Full revision printed on board: **Y005-F4**
-
-![Y005](../Assets/Images/y005-inside-scaled.jpg)
-([Full size](../Assets/Images/y005-inside.jpg))
-
-
-#### GSM Connectivity
-
-A [SIM800C](https://www.simcom.com/product/SIM800C.html) package is mounted on U5, providing GSM connectivity through ANT1.
-
-![SIM800C](../Assets/Images/y005-u5-sim800c-scaled.jpg)
-([Full size](../Assets/Images/y005-u5-sim800c.jpg))
-
-
-#### WLAN Connectivity
-
-A [Realtek RTL8723BU](https://www.realtek.com/en/products/communications-network-ics/item/rtl8723bu) package is mounted on U12, providing WLAN connectivity through ANT2.
-
-![RTL8723BU](../Assets/Images/y005-u12-rtl8723bu-scaled.jpg)
-([Full size](../Assets/Images/y005-u12-rtl8723bu.jpg))
-
-
-#### RF Radio
-
-A module called MOO2-V1.0 appears to handle RF radio on the Y005. It features a [CMOSTEK CMT2210LB](https://www.hoperf.com/ic/rf_receiver/CMT2210LBW.html) on U1 for receiving through ANT3 (ANT1 on the MOO2 module) and possibly a transmitter at U2 transmitting through ANT4 (ANT2 on the MOO2 module).
-
-![MOO2 Module](../Assets/Images/y005-moo2-scaled.jpg)
-([Full size](../Assets/Images/y005-moo2.jpg))
-
-
-#### RF Decoder?
-
-A [Nuvoton NUC121LC2AE](https://www.nuvoton.com/products/microcontrollers/arm-cortex-m0-mcus/nuc121-125-series/nuc121lc2ae/) is mounted at U21. It's an ARM Cortex®-M0 32-bit Microcontroller running up to 50 MHz and supporting 32 KiB Flash, 8 KiB SRAM. It may be used for RF signal processing, but we are unsure at this point.
-
-![NUC121LC2AE](../Assets/Images/y005-u21-nuc121lc2ae-scaled.jpg)
-([Full size](../Assets/Images/y001-u16-stm32.jpg))
-
-
-#### Mystery Header U19
-
-Like the Y001, the Y005 also has an unused mystery header at U19. We're still hoping for an SD-Card adapter :-)
-
-![U19](../Assets/Images/y005-u19-scaled.jpg)
-([Full size](../Assets/Images/y005-u19.jpg))
-
-The NUC121 is located close to U19 at U21 and features USB connectivity, same as the USB2 controller on Y001.
-
-#### GPIO
-
-TODO
+```
+echo 1   > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio1/direction
+echo 0   > /sys/class/gpio/gpio1/value
+```
