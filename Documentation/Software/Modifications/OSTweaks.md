@@ -71,7 +71,7 @@ apt-get update
 Test by installing a few useful packages:
 
 ```
-apt-get install minicom lsof tcpdump less
+apt-get install minicom lsof tcpdump less strace psmisc socat
 ```
 
 
