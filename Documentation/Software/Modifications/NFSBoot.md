@@ -76,7 +76,7 @@ $ tar -zcvf ../rootfs-backup.tar.gz \
 Trick UBoot into applying NFS configuration even if it thinks it's booting from MMC:
 
 ```uboot
-setenv mmcroot /dev/nfs ip=:::::eth1:dhcp nfsroot=10.69.0.92:/exports/nova02/root,v4,tcp panic=10 rw
+setenv mmcargs setenv bootargs console=${console},${baudrate} root=/dev/nfs ip=:::::eth1:dhcp nfsroot=10.69.0.92:/exports/nova02/root,v4,tcp panic=10
 ```
 
 If you want to make these changes permanent:
@@ -86,6 +86,12 @@ save
 ```
 
 Now boot the system:
+
+```
+boot
+```
+
+After a while, you should be presented with a login prompt:
 
 ```
 Debian GNU/Linux 7 nova-02 ttymxc0

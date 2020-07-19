@@ -50,14 +50,16 @@ Below is the default environment for the device. Environment variables are used 
 
 ### Boot configuration
 
-While not entirely the right way, the easiest way to modify boot parameters, is to modify `mmcroot`. Here are a few examples:
+While not entirely the right way, the easiest way to modify boot parameters, is to modify `mmcargs`. Here are a few examples:
+
+Note: While it might seem easier to use `mmcroot`, this environment variable will be overwritten by U-Boot when detecting MMC devices.
 
 #### Normal boot
 
 This will boot from the root partition on the MMC:
 
 ```
-setenv mmcroot /dev/mmcblk1p2 rootwait panic=10 rw
+setenv mmcargs setenv bootargs console=${console},${baudrate} root=${mmcroot} panic=10
 boot
 ```
 
@@ -66,7 +68,7 @@ boot
 This will boot from the root partition on the MMC, but will bypass the normal System V initd startup, and run Bash as the first process. You will have full access to the filesystem, but you will be responsible for syncing and unmounting after writing.
 
 ```
-setenv mmcroot /dev/mmcblk1p2 rootwait init=/bin/bash panic=10 rw
+setenv mmcargs setenv bootargs console=${console},${baudrate} root=${mmcroot} panic=10 init=/bin/bash
 boot
 ```
 
@@ -75,7 +77,7 @@ Once booted, you can set a new root password with `passwd root`, followed by `sy
 #### NFS boot
 
 ```
-setenv mmcroot /dev/nfs ip=:::::eth1:dhcp nfsroot=XX.XX.XX.XX:/exports/nova02/root,v4,tcp panic=10 rw
+setenv mmcargs setenv bootargs console=${console},${baudrate} root=/dev/nfs ip=:::::eth1:dhcp nfsroot=XX.XX.XX.XX:/exports/nova02/root,v4,tcp panic=10
 boot
 ```
 
