@@ -151,7 +151,7 @@ iotc_main 2794 root   22u  IPv4   5493      0t0    UDP *:mdns
 iotc_main 2794 root   23u  IPv6   5495      0t0    UDP *:mdns 
 iotc_main 2794 root   25u   CHR  166,0      0t0   5516 /dev/ttyACM0
 iotc_main 2794 root   26u  sock    0,7      0t0   5511 can't identify protocol
-iotc_main 2794 root   29u  IPv4   5534      0t0    UDP S6EVO.home.saustrup.net:32868->api.dinsafer.com:7788 
+iotc_main 2794 root   29u  IPv4   5534      0t0    UDP ...:32868->api.dinsafer.com:7788 
 iotc_main 2794 root   30u  IPv6   5538      0t0    TCP *:8077 (LISTEN)
 iotc_main 2794 root   32u  IPv6   5541      0t0    TCP *:1949 (LISTEN)
 ```
