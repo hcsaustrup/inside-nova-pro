@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The board also receives power from an external power supply and charges the battery. It also holds the [SOM](SOM.md). 
+This board has all the I/O peripherals needed to communicate with sensors, network (either through wifi or Ethernet), GSM network as well as a siren and a smaller beeper. The board also receives power from an external power supply and charges the battery. It also holds the [SOM](SOM.md).
+
+For development, see the [Forlinx OKMX6UL-C1 Base Board](BaseBoard-OKMX6UL-C1.md).
 
 ## Versions
 
