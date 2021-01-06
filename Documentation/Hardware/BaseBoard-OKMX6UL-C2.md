@@ -5,7 +5,7 @@
 
 ## Introduction
 
-[Forlinx Embedded](http://www.forlinx.net/) - the company producing the [SOM](SOM.md) - has a complete single board computer which should be capable of using the same CPU board as the NOVA Pro, while providing a reasonable selection of I/O as well as dip switches for various settings (boot options etc.).
+[Forlinx Embedded](http://www.forlinx.net/) - the company producing the [SOM](SOM.md) - has a complete single board computer which should be capable of using the same CPU board as the NOVA Pro, while providing a reasonable selection of I/O as well as dip switches for various settings (boot options etc.). For a wider range of I/O ports, see the [C1 board](BaseBoard-OKMX6UL-C1.md).
 
 ## Additional information
 
