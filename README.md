@@ -1,3 +1,7 @@
+# PROJECT ABANDONED
+
+There has been very little interest in this project, so I'm throwing in the towel.
+
 # Inside the NOVA Pro Alarm System
 
 ![Photo of the unit](Documentation/Assets/Images/NOVA-Pro-Alarm-System.jpg "NOVA Pro Alarm System")
